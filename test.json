@@ -1,0 +1,236 @@
+[{
+"datahub": {
+"findability": "published",
+"hash": "a0c52098c00967a3b4ce4641e741b355",
+"modified": "2017-11-09T00:09:26.620163",
+"owner": "anuveyatsu",
+"ownerid": "90998f7f90e086bd5fc7c9075dfda43b",
+"stats": {
+"bytes": 3415810,
+"rowcount": 11542
+}
+},
+"description": "Country, regional and world GDP in current US Dollars ($). Regional means collections of countries e.g. Europe & Central Asia. Data is sourced from the World Bank and turned into a standard normalized CSV.",
+"id": "90998f7f90e086bd5fc7c9075dfda43b/gdp",
+"image": "http://assets.okfn.org/p/opendatahandbook/img/data-wrench.png",
+"keywords": [
+"GDP",
+"World",
+"Gross Domestic Product",
+"Time series"
+],
+"last_updated": "2011-09-21",
+"license": "PDDL-1.0",
+"name": "gdp",
+"profile": "data-package",
+"readme": "Country, regional and world GDP in current US Dollars ($). Regional means\ncollections of countries e.g. Europe & Central Asia. Data is sourced from the\nWorld Bank and turned into a standard normalized CSV (code can be found in\nprocess.py of data package repository).\n\n## Source\n\nThe data is sourced from the World Bank (specifically [this dataset][current]) which\nin turn lists as sources: *World Bank national accounts data, and OECD National\nAccounts data files*.\n\nNote that there are a variety of different GDP indicators on offer from the\nWorld Bank including:\n\n* [GDP in current USD][current]\n* [GDP in constant USD (2000)][constant]\n* [GDP, PPP (constant 2005 international $)][ppp]\n* [GDP (constant LCU)][lcu]\n\n[constant]: http://data.worldbank.org/indicator/NY.GDP.MKTP.KD\n[current]: http://data.worldbank.org/indicator/NY.GDP.MKTP.CD\n[ppp]: http://data.worldbank.org/indicator/NY.GDP.MKTP.PP.KD\n[lcu]: http://data.worldbank.org/indicator/NY.GDP.MKTP.KN\n\n",
+"resources": [
+{
+"bytes": 524672,
+"datahub": {
+"derivedFrom": [
+"gdp"
+],
+"type": "derived/csv"
+},
+"dialect": {
+"delimiter": ",",
+"doubleQuote": true,
+"lineTerminator": "\r\n",
+"quoteChar": "\"",
+"skipInitialSpace": false
+},
+"dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/7eabcdf537237c2e3f05dc8577f2ecf3#.csv",
+"encoding": "utf-8",
+"format": "csv",
+"hash": "3f6b9b468eff17d19f767673be52855a",
+"name": "gdp_csv",
+"path": "https://pkgstore.datahub.io/90998f7f90e086bd5fc7c9075dfda43b/gdp/1/gdp_csv/data/3f6b9b468eff17d19f767673be52855a/gdp_csv.csv",
+"profile": "data-resource",
+"rowcount": 11542,
+"schema": {
+"fields": [
+{
+"name": "Country Name",
+"type": "string"
+},
+{
+"foreignkey": "iso-3-geo-codes/id",
+"name": "Country Code",
+"type": "string"
+},
+{
+"format": "%Y-%m-%d",
+"name": "Year",
+"type": "date"
+},
+{
+"decimalChar": ".",
+"description": "GDP in current USD",
+"groupChar": "",
+"name": "Value",
+"type": "number"
+}
+]
+}
+},
+{
+"bytes": 756275,
+"datahub": {
+"derivedFrom": [
+"gdp"
+],
+"type": "derived/preview"
+},
+"dialect": {
+"delimiter": ",",
+"doubleQuote": true,
+"lineTerminator": "\r\n",
+"quoteChar": "\"",
+"skipInitialSpace": false
+},
+"dpp:streamedFrom": "https://pkgstore.datahub.io/90998f7f90e086bd5fc7c9075dfda43b/gdp/1/gdp_csv/data/3f6b9b468eff17d19f767673be52855a/gdp_csv.csv",
+"encoding": "utf-8",
+"forView": [
+"datahub-preview-gdp_csv_preview"
+],
+"format": "json",
+"hash": "82b534438cfdb66730c955e6791bb909",
+"name": "gdp_csv_preview",
+"path": "https://pkgstore.datahub.io/90998f7f90e086bd5fc7c9075dfda43b/gdp/1/gdp_csv_preview/data/82b534438cfdb66730c955e6791bb909/gdp_csv_preview.json",
+"profile": "data-resource",
+"rowcount": 13542,
+"schema": {
+"fields": [
+{
+"name": "Country Name",
+"type": "string"
+},
+{
+"foreignkey": "iso-3-geo-codes/id",
+"name": "Country Code",
+"type": "string"
+},
+{
+"format": "%Y-%m-%d",
+"name": "Year",
+"type": "date"
+},
+{
+"decimalChar": ".",
+"description": "GDP in current USD",
+"groupChar": "",
+"name": "Value",
+"type": "number"
+}
+]
+}
+},
+{
+"bytes": 1206517,
+"datahub": {
+"derivedFrom": [
+"gdp"
+],
+"type": "derived/json"
+},
+"dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/7eabcdf537237c2e3f05dc8577f2ecf3#.csv",
+"encoding": "utf-8",
+"format": "json",
+"hash": "f11cb8c477556e91ca01e19619af0beb",
+"name": "gdp_json",
+"path": "https://pkgstore.datahub.io/90998f7f90e086bd5fc7c9075dfda43b/gdp/1/gdp_json/data/f11cb8c477556e91ca01e19619af0beb/gdp_json.json",
+"profile": "data-resource",
+"rowcount": 11542,
+"schema": {
+"fields": [
+{
+"name": "Country Name",
+"type": "string"
+},
+{
+"foreignkey": "iso-3-geo-codes/id",
+"name": "Country Code",
+"type": "string"
+},
+{
+"format": "%Y-%m-%d",
+"name": "Year",
+"type": "date"
+},
+{
+"description": "GDP in current USD",
+"name": "Value",
+"type": "number"
+}
+]
+}
+},
+{
+"bytes": 472926,
+"datahub": {
+"type": "derived/zip"
+},
+"description": "Compressed versions of dataset. Includes normalized CSV and JSON data with original data and datapackage.json.",
+"dpp:streamedFrom": "/tmp/90998f7f90e086bd5fc7c9075dfda43b.gdp.1.zip",
+"encoding": "utf-8",
+"format": "zip",
+"name": "datapackage_zip",
+"path": "https://pkgstore.datahub.io/90998f7f90e086bd5fc7c9075dfda43b/gdp/1/datapackage_zip/data/97c27efef1bdf0c5f2b480013c796126/datapackage_zip.zip",
+"profile": "data-resource"
+},
+{
+"bytes": 455420,
+"datahub": {
+"type": "source/tabular"
+},
+"dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/7eabcdf537237c2e3f05dc8577f2ecf3#.csv",
+"encoding": "utf-8",
+"format": "csv",
+"name": "gdp",
+"path": "https://pkgstore.datahub.io/90998f7f90e086bd5fc7c9075dfda43b/gdp/1/gdp/data/7eabcdf537237c2e3f05dc8577f2ecf3/gdp.csv",
+"profile": "data-resource",
+"schema": {
+"fields": [
+{
+"name": "Country Name",
+"type": "string"
+},
+{
+"foreignkey": "iso-3-geo-codes/id",
+"name": "Country Code",
+"type": "string"
+},
+{
+"format": "any",
+"name": "Year",
+"type": "date"
+},
+{
+"description": "GDP in current USD",
+"name": "Value",
+"type": "number"
+}
+]
+}
+}
+],
+"title": "Country, Regional and World GDP (Gross Domestic Product)",
+"version": "2011",
+"views": [
+{
+"datahub": {
+"type": "preview"
+},
+"name": "datahub-preview-gdp_csv_preview",
+"resources": [
+"gdp"
+],
+"specType": "table",
+"transform": {
+"limit": 2000
+}
+}
+]
+}
+]
